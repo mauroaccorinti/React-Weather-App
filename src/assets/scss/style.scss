@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+html:before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    
+    display: block;
+    background-image: url('/assets/img/backgrounds/wallpaperflare.com_wallpaper\ \(1\).jpg');
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+
+    .weather-card {
+        width: 338px;
+        height: 50%;
+        border: 1px white solid;
+        box-shadow: inset 0px 0px 20px 2px white;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        padding: 1em;
+        background-color: transparent;
+
+        p {
+            margin: 0;
+            color: white;
+        }
+
+        hr {
+            border-top: 1px solid grey;
+            width: 100%;
+            margin: 6px 0;
+        }
+
+        img {
+            height: 30px;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+
+            .location {
+                .city {}
+
+                .country {}
+            }
+
+            .date {
+                text-align: right;
+
+                time {}
+
+                .day {}
+            }
+
+        }
+
+        .middle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            img,
+            p {
+                display: inline-block;
+            }
+
+            p {
+                font-size: 110px;
+                font-weight: bold;
+                vertical-align: super;
+            }
+
+            .weather {
+                display: inline-block;
+
+                img {
+                    height: 65px;
+                }
+
+                p {
+                    font-size: 20px;
+                    display: block;
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 6px;
+            ;
+
+            .humidity,
+            .wind-speed {
+
+                img,
+                p {
+                    display: inline-block;
+                }
+
+                p {
+                    vertical-align: super;
+                }
+            }
+
+            .degree-unit {
+                button {
+                    background: transparent;
+                    color: rgba(255, 255, 255, 0.6);
+                    height: 40px;
+                    padding: 2px 4px 8px;
+                    border: none;
+                    font-size: larger;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    &:disabled {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
