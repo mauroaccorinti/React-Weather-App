@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/React-Weather-App/static/css/main.a0cf571b.chunk.css",
-    "main.js": "/React-Weather-App/static/js/main.906f1d38.chunk.js",
-    "main.js.map": "/React-Weather-App/static/js/main.906f1d38.chunk.js.map",
-    "runtime-main.js": "/React-Weather-App/static/js/runtime-main.9edf74a4.js",
-    "runtime-main.js.map": "/React-Weather-App/static/js/runtime-main.9edf74a4.js.map",
-    "static/js/2.9c20cc2a.chunk.js": "/React-Weather-App/static/js/2.9c20cc2a.chunk.js",
-    "static/js/2.9c20cc2a.chunk.js.map": "/React-Weather-App/static/js/2.9c20cc2a.chunk.js.map",
-    "static/js/3.1482fd48.chunk.js": "/React-Weather-App/static/js/3.1482fd48.chunk.js",
-    "static/js/3.1482fd48.chunk.js.map": "/React-Weather-App/static/js/3.1482fd48.chunk.js.map",
+    "main.js": "/React-Weather-App/static/js/main.1b8ab2b1.chunk.js",
+    "main.js.map": "/React-Weather-App/static/js/main.1b8ab2b1.chunk.js.map",
+    "runtime-main.js": "/React-Weather-App/static/js/runtime-main.9966615a.js",
+    "runtime-main.js.map": "/React-Weather-App/static/js/runtime-main.9966615a.js.map",
+    "static/js/2.4367da20.chunk.js": "/React-Weather-App/static/js/2.4367da20.chunk.js",
+    "static/js/2.4367da20.chunk.js.map": "/React-Weather-App/static/js/2.4367da20.chunk.js.map",
+    "static/js/3.3426601d.chunk.js": "/React-Weather-App/static/js/3.3426601d.chunk.js",
+    "static/js/3.3426601d.chunk.js.map": "/React-Weather-App/static/js/3.3426601d.chunk.js.map",
     "index.html": "/React-Weather-App/index.html",
     "static/css/main.a0cf571b.chunk.css.map": "/React-Weather-App/static/css/main.a0cf571b.chunk.css.map",
-    "static/js/2.9c20cc2a.chunk.js.LICENSE.txt": "/React-Weather-App/static/js/2.9c20cc2a.chunk.js.LICENSE.txt",
+    "static/js/2.4367da20.chunk.js.LICENSE.txt": "/React-Weather-App/static/js/2.4367da20.chunk.js.LICENSE.txt",
     "static/media/cloud.PNG": "/React-Weather-App/static/media/cloud.516d10f2.PNG",
     "static/media/cloudy.PNG": "/React-Weather-App/static/media/cloudy.e5da7bbd.PNG",
     "static/media/logo.6ce24c58.svg": "/React-Weather-App/static/media/logo.6ce24c58.svg",
@@ -24,9 +24,9 @@
     "static/media/wind-sock.png": "/React-Weather-App/static/media/wind-sock.bb3c1fd5.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.9edf74a4.js",
-    "static/js/2.9c20cc2a.chunk.js",
+    "static/js/runtime-main.9966615a.js",
+    "static/js/2.4367da20.chunk.js",
     "static/css/main.a0cf571b.chunk.css",
-    "static/js/main.906f1d38.chunk.js"
+    "static/js/main.1b8ab2b1.chunk.js"
   ]
 }
