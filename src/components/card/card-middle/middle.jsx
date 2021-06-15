@@ -1,17 +1,22 @@
 import React from "react"
-//https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2
-
-const Middle = (props) => {
-    let temp = props.temp;
-    function cToF(n){
+import thunder from "./img/thunder.PNG"
+//https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2  
+const Middle = ({
+    temp,
+    weatherState,
+    weatherId,
+    isTempUnitCelcius,
+    ...props
+}) => {
+    function cToF(n) {
         return n * 1.8 + 32;
     }
 
-    function fToC(n){
+    function fToC(n) {
         return n - 32 / 1.8;
     }
 
-    if(!props.isTempUnitCelcius){
+    if (!isTempUnitCelcius) {
         temp = cToF(temp);
     }
     return (
@@ -19,8 +24,8 @@ const Middle = (props) => {
             <p class="temperature">{Math.round(temp)}&#176;
             </p>
             <div class="weather">
-                <img src={getImage(props.weatherId)} alt="" />
-                <p>{/*props.weather*/}CLOUDY</p>
+                <img src={getImage(weatherId)} alt="" />
+                <p>{weatherState}</p>
             </div>
 
         </div>
@@ -29,9 +34,21 @@ const Middle = (props) => {
 
 function getImage(n) {
 
+/*   
+    const config = {
+        "algo": ()=> {
+            hagoAlgo();
+            hagoAlgo2();
+        },
+        "otraCosa": hagoOtraCosa
+    };
+
+    const ejecuto = config[valor] || default ;
+    ejecuto();
+ */
     switch (true) {
         case n >= 200 && n <= 232:
-            return require("./img/thunder.PNG").default
+            return thunder;
         case n >= 300 && n <= 531:
             return require("./img/rainy.PNG").default
         case n >= 600 && n <= 622:
@@ -45,9 +62,7 @@ function getImage(n) {
         case n === 803:
         default:
             return require("./img/cloud.PNG").default;
-        
     }
-    return n;
 }
 
 export default Middle;

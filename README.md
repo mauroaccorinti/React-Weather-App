@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+## Find the deployed version here:
+
+https://mauroaccorinti.github.io/React-Weather-App
+
+This is a react project created with the intention of using best practices in responsive design, accessibility, programming principles and sustainability learned from [Front End Master's Career-Ready Web Developer course](https://frontendmasters.com/learn/beginner/)
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +75,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ -->

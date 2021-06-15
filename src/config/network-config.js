@@ -1,8 +1,7 @@
-import axios from "axios"
-import config from "./rapidapi-key-config"
+import axios from "axios";
+import config from "./rapidapi-key-config";
 
 var key = config.API_KEY;
-
 const Api = axios.create({
     baseURL: "https://community-open-weather-map.p.rapidapi.com",
     "headers": {
