@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/React-Weather-App/static/css/main.67bee098.chunk.css",
-    "main.js": "/React-Weather-App/static/js/main.f4e2775f.chunk.js",
-    "main.js.map": "/React-Weather-App/static/js/main.f4e2775f.chunk.js.map",
+    "main.js": "/React-Weather-App/static/js/main.a5ad5531.chunk.js",
+    "main.js.map": "/React-Weather-App/static/js/main.a5ad5531.chunk.js.map",
     "runtime-main.js": "/React-Weather-App/static/js/runtime-main.66b8646d.js",
     "runtime-main.js.map": "/React-Weather-App/static/js/runtime-main.66b8646d.js.map",
     "static/js/2.017edb2d.chunk.js": "/React-Weather-App/static/js/2.017edb2d.chunk.js",
@@ -15,7 +15,6 @@
     "static/media/cloud.PNG": "/React-Weather-App/static/media/cloud.516d10f2.PNG",
     "static/media/style.scss": "/React-Weather-App/static/media/sunny.25d03d85.jpg",
     "static/media/cloudy.PNG": "/React-Weather-App/static/media/cloudy.e5da7bbd.PNG",
-    "static/media/logo.6ce24c58.svg": "/React-Weather-App/static/media/logo.6ce24c58.svg",
     "static/media/rainy.PNG": "/React-Weather-App/static/media/rainy.d2c7c3d0.PNG",
     "static/media/snowy.PNG": "/React-Weather-App/static/media/snowy.02045728.PNG",
     "static/media/sunny-cloud.PNG": "/React-Weather-App/static/media/sunny-cloud.fcd9d186.PNG",
@@ -27,6 +26,6 @@
     "static/js/runtime-main.66b8646d.js",
     "static/js/2.017edb2d.chunk.js",
     "static/css/main.67bee098.chunk.css",
-    "static/js/main.f4e2775f.chunk.js"
+    "static/js/main.a5ad5531.chunk.js"
   ]
 }
