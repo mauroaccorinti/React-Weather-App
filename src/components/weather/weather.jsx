@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { /* createContext, */ useEffect, useState } from "react";
 import Api from "../../config/network-config";
 import Top from "../card/card-top/top";
 import Middle from "../card/card-middle/middle";
 import Bottom from "../card/card-bottom/bottom"
+import SearchBar from '../search-bar/SearchBar'
 
-const Weather = (props) => {
+const Weather = ({
+    location: receivedLocation,
+    useCoordinates,
+    setBackgroundImage,
+    ...props }) => {
 
     const date = new Date();
 
@@ -12,15 +17,24 @@ const Weather = (props) => {
     const [temp, setTemp] = useState(null);
     const [humidity, setHumidity] = useState(null);
     const [windSpeed, setWindSpeed] = useState(null);
-    const [location, setLocation] = useState([]);
+    const [shownLocation, setShownLocation] = useState([]);//////
+
+    //const SearchedLocationContext = createContext(setSearchedLocation);
+    const [coordinates, setCoordinates] = useState({
+        lat: null,
+        lng: null
+    });
+
     const [isTempUnitCelcius, setIsTempUnitCelcius] = useState(true);
     const [weather, setWeather] = useState({
         id: 0,
         main: "none"
     });
 
+
+
     function getWeatherData(q) {
-        Api.get("/weather?" + `${q}` + "&units=metric").then((data) => {
+        Api.get(`/weather?${q}&units=metric`).then((data) => {
             const {
                 main,
                 name,
@@ -32,10 +46,10 @@ const Weather = (props) => {
 
             let location = {
                 city: name,
-                country: speechSynthesis.country,
+                country: sys.country,
             }
-            location.stateCountry = location.state ? location.state + ", " + location.country : location.country;
-            setLocation(location)
+            location.stateCountry = location.state ? `${location.state}, ${location.country}` : location.country;
+            setShownLocation(location)
             setTemp(main.temp);
             setHumidity(main.humidity);
             setWindSpeed(wind.speed);
@@ -49,24 +63,30 @@ const Weather = (props) => {
     }
     useEffect(() => {
         let q;
-        if (props.useCoordinates) {
+        if (useCoordinates && !coordinates.lat) {
             navigator.geolocation.getCurrentPosition(function (position) {
-                q = `lat=${position.coords.latitude}` + "&" + `lon=${position.coords.longitude}`
+                q = `lat=${position.coords.latitude}&lon=${position.coords.longitude}`
                 getWeatherData(q);
             });
         } else {
-            q = "q=" + props.location;
+            //q = "q=" + (searchedLocation) ? searchedLocation : receivedLocation;
+            q = `lat=${coordinates.lat}&lon=${coordinates.lng}`
             getWeatherData(q);
         }
 
-    }, /*[temp, humidity, windSpeed, props]*/[]);
+    }, /*[temp, humidity, windSpeed, props]*/[coordinates, useCoordinates]);
 
     return (<div className="weather-card">
-        <Top location={location} date={date} />
+        <Top location={shownLocation} date={date} />
         <hr />
-        <Middle temp={temp} weatherState={weather.main} weatherId={weather.id} isTempUnitCelcius={isTempUnitCelcius} />
+        <Middle temp={temp} weatherState={weather.main} weatherId={weather.id} isTempUnitCelcius={isTempUnitCelcius} setBackgroundImage={setBackgroundImage}/>
         <hr />
         <Bottom humidity={humidity} windSpeed={windSpeed} setIsTempUnitCelcius={setIsTempUnitCelcius} />
+        <SearchBar setCoordinates={setCoordinates}/>
+        {/* <SearchedLocationContext.Provider value={""}>
+            
+        </SearchedLocationContext.Provider> */}
+
     </div>);
 }
 

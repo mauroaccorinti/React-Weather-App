@@ -1,11 +1,22 @@
 import logo from './logo.svg';
 import Weather from './components/weather/weather';
-import SearchBar from './components/search-bar/SearchBar'
 import "./assets/scss/style.scss"
+import scriptLoader from "react-async-script-loader";
+import React, {
+  useState
+} from "react"
 //import 'font-awesome/css/font-awesome.min.css'
 
-function App() {
+function App({ isScriptLoaded, isScriptLoadSucceed }) {
 
+  const conditions = {
+    "sunny": "sunny",
+    "cloudy": "cloudy",
+    "snowy": "snowy",
+    "fall": "fall",
+    "rainy": "rainy"
+  };
+  const [backgroundImage, setBackgroundImage] = useState("sunny");
   let location;
   let useCoord = navigator.geolocation ? true : false;
 
@@ -16,13 +27,21 @@ function App() {
   }
   location.stateCountry = location.state ? location.state + ", " + location.country : location.country;
  */
-  return (<div className = "wrapper" >
-            <div className = "App" >
-              <Weather location = {location} useCoordinates = {useCoord}/> 
-              <SearchBar/>
-            </div> 
-          </div>
-  );
+
+  if (isScriptLoaded && isScriptLoadSucceed) {
+    
+    return (< div className={
+      `wrapper ${backgroundImage}`
+    } >
+      <div className="app" >
+        <Weather location={location} useCoordinates={useCoord} setBackgroundImage={setBackgroundImage} />
+      </div>
+    </div>
+    );
+
+  } else
+    return <div></div>
+
 }
 
-export default App;
+export default scriptLoader([`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAP_API}&libraries=places&language=en`]) (App);
